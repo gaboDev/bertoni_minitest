@@ -1,0 +1,10 @@
+
+.componentsContainer{
+    display: flex;
+    align-items: baseline;
+}
+
+.componentsContainer app-create-pet, #petsList{
+    flex-grow: 2;
+    padding: 2em;
+}

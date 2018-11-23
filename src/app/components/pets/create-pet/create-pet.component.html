@@ -1,0 +1,46 @@
+<div class="crete-form">
+  <h3>Create Pets</h3>
+
+
+  <div class="ui warning message" *ngIf="!validData">
+    <div class="header">
+      You must enter all information.
+    </div>
+  </div>
+
+
+  <form class="ui form" (ngSubmit)="createPet()">
+
+    <div class="field">
+      <label>ID</label>
+      <input type="text" name="newPet.id" required [(ngModel)]="newPet.id" placeholder="ID">
+    </div>
+
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="newPet.name" required [(ngModel)]="newPet.name" placeholder="Pet Name">
+    </div>
+
+    <div class="field">
+      <label>Photo URLs</label>
+      <input type="text" name="newPet.photoUrls" required [(ngModel)]="newPet.photoUrls" placeholder="Pet Photo URLs">
+    </div>
+
+    <div class="field">
+      <label>Tags</label>
+      <input type="text" name="newPet.tags" required [(ngModel)]="newPet.tags" placeholder="Pet Tags">
+    </div>
+
+    <div class="field">
+      <label>Category</label>
+      <select name="newPet.category" id="" [(ngModel)]="newPet.category">
+        <option *ngFor="let option of categories"
+                [ngValue]="option">{{option.name}}</option>
+      </select>
+    </div>
+
+
+    <button class="ui blue button" type="submit">Save</button>
+  </form>
+
+</div>

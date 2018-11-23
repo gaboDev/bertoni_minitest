@@ -1,0 +1,15 @@
+<div class="ui top attached demo menu">
+    <a class="item" (click)="sidebar.toggle()">
+        <i class="sidebar icon"></i> Menu
+    </a>
+</div>
+<sui-sidebar-container class="ui bottom attached segment">
+    <sui-sidebar class="inverted vertical" #sidebar>
+        <a class="item" routerLink="/">Pets</a>
+    </sui-sidebar>
+    <sui-sidebar-sibling [isDimmedWhenVisible]="true">
+        <div class="ui basic segment">
+            <router-outlet></router-outlet>
+        </div>
+    </sui-sidebar-sibling>
+</sui-sidebar-container>
